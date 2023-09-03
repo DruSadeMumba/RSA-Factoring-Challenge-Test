@@ -28,7 +28,7 @@ void factorize(long long n) {
 int main(int argc, char *argv[]) 
 {
     FILE *file = fopen(argv[1], "r");
-    char buffer[256];
+    char buffer[256], data;
     long long num;
     
     if (argc != 2) 
