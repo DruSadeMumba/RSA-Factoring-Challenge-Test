@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    data = fgets(buffer, sizeof(buffer), file);
+    data = fgets(&buffer, &(sizeof(buffer)), file);
     while (data)
     {
         num = atoll(buffer);
