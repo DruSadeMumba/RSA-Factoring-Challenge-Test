@@ -5,7 +5,7 @@ void factorize(long long n) {
     long long i = 2;
     while (i * i <= n) {
         if (n % i == 0) {
-            printf("%lld=%lld*%lld\n", n, i, n / i);
+            printf("%lld=%lld*%lld\n", n, n / i, i);
             return;
         }
         i++;
@@ -15,7 +15,7 @@ void factorize(long long n) {
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        printf("Usage: %s <input.txt>\n", argv[0]);
+        fprintf(stderr, "Usage: ./factors <testfile>\n");
         return 1;
     }
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 
     char buffer[256];
     while (fgets(buffer, sizeof(buffer), file)) {
-        long long num = atoll(buffer); // Convert to long long
+        long long num = atoll(buffer);
         factorize(num);
     }
 
