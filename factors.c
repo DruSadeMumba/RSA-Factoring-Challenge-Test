@@ -43,8 +43,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    data = fgets(&buffer, &(sizeof(buffer)), file);
-    while (data)
+    data = ;
+    while (fgets(buffer, sizeof(buffer), file))
     {
         num = atoll(buffer);
         factorize(num);
