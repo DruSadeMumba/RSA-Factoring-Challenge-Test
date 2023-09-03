@@ -37,13 +37,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    if (file == NULL)
+    if (!file)
     {
         perror("Error opening the file");
         return 1;
     }
 
-    while (fgets(buffer, sizeof(buffer), file))
+    data = fgets(buffer, sizeof(buffer), file);
+    while (data)
     {
         num = atoll(buffer);
         factorize(num);
